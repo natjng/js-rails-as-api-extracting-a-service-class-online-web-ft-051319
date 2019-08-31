@@ -15,7 +15,19 @@ class SightingSerializer
             },
             except: [:updated_at],
         }
-        
+
         @sighting.to_json(options)
+
+        # can also write options hash this way
+        # options = {}
+        # options[:include] = {
+        #   bird: {
+        #     only: [:name, :species]
+        #   },
+        #   location: {
+        #     only: [:latitude, :longitude]
+        #   }
+        # }
+        # options[:except] = [:updated_at]
     end
 end
